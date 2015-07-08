@@ -1,12 +1,19 @@
 ---
 layout: post
 ---
-Yet another Hello World example (in Ruby)
-{% highlight ruby %}
-5.times { STDOUT.puts 'Hello World' }
-# => Hello World
-# => Hello World
-# => Hello World
-# => Hello World
+## Context
+
+* You are on the terminal
+
+* You have Ruby installed and in the path
+
+## Problem
+
+You want to output some text in the terminal (i.e. stdout)
+
+## Solution
+
+{% highlight bash %}
+$ ruby -e "puts 'Hello World'"
 # => Hello World
 {% endhighlight %}
