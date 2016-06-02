@@ -14,32 +14,38 @@
 
   </head>
   <body class="container">
+    <header>
     <h1>Flame Fusion<small>A blog about Ruby</small></h1>
     <div id="main" role="main">
       <%= yield %>
     </div>
+    </header>
 
     <aside>
-      <h2>Recent Articles</h2>
-      <ol>
-        <% blog.articles[0...10].each do |article| %>
-          <li><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></li>
-        <% end %>
-      </ol>
+    <h2>Recent Articles</h2>
+    <ol>
+      <% blog.articles[0...10].each do |article| %>
+        <li><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></li>
+      <% end %>
+    </ol>
 
-      <h2>Tags</h2>
-      <ol>
-        <% blog.tags.each do |tag, articles| %>
-          <li><%= link_to "#{tag} (#{articles.size})", tag_path(tag) %></li>
-        <% end %>
-      </ol>
+    <h2>Tags</h2>
+    <ol>
+      <% blog.tags.each do |tag, articles| %>
+        <li><%= link_to "#{tag} (#{articles.size})", tag_path(tag) %></li>
+      <% end %>
+    </ol>
 
-      <h2>By Year</h2>
-      <ol>
-        <% blog.articles.group_by {|a| a.date.year }.each do |year, articles| %>
-          <li><%= link_to "#{year} (#{articles.size})", blog_year_path(year) %></li>
-        <% end %>
-      </ol>
+    <h2>By Year</h2>
+    <ol>
+      <% blog.articles.group_by {|a| a.date.year }.each do |year, articles| %>
+        <li><%= link_to "#{year} (#{articles.size})", blog_year_path(year) %></li>
+      <% end %>
+    </ol>
     </aside>
+
+    <footer>
+    <div class="text-center">&copy; Efflamm Castel 2016
+    </footer>
   </body>
 </html>
