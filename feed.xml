@@ -14,7 +14,7 @@
     <link rel="alternate" href="http://blog.url.com/2016/06/02/ruby-arrays.html"/>
     <id>http://blog.url.com/2016/06/02/ruby-arrays.html</id>
     <published>2016-06-02T22:56:00+00:00</published>
-    <updated>2016-06-02T23:21:51+00:00</updated>
+    <updated>2016-06-02T23:23:51+00:00</updated>
     <author>
       <name>Article Author</name>
     </author>
@@ -32,24 +32,29 @@
 
 &lt;h3 id="the-object-oriented-way--arraynew"&gt;The object oriented way : Array.new&lt;/h3&gt;
 
-&lt;p&gt;&lt;code&gt;ruby
-Array.new       #=&amp;gt; []
-Array.new(2)    #=&amp;gt; [nil, nil]
-Array.new(2, 4) #=&amp;gt; [4, 4]
-&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;```ruby
+Array.new       #=&amp;gt; []&lt;/p&gt;
+
+&lt;p&gt;Array.new(2)    #=&amp;gt; [nil, nil]&lt;/p&gt;
+
+&lt;p&gt;Array.new(2, 4) #=&amp;gt; [4, 4]
+```&lt;/p&gt;
 
 &lt;p&gt;Be aware that mutable objects (like hashes, strings, arrays…) should be instantiated with a block like this :&lt;/p&gt;
 
-&lt;p&gt;Array.new(3) { Hash.new }&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Array.new(3) { Hash.new }&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;See this pitfall in action :&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;ruby
-hash = Hash.new
-array = Array.new(3, hash)  #=&amp;gt; [{}, {}, {}]
-array[0][:key] = [:value]
-array                       #=&amp;gt; [{key: :value}, {key: :value}, {key: :value}]
-&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;```ruby
+hash = Hash.new&lt;/p&gt;
+
+&lt;p&gt;array = Array.new(3, hash)  #=&amp;gt; [{}, {}, {}]&lt;/p&gt;
+
+&lt;p&gt;array[0][:key] = [:value]&lt;/p&gt;
+
+&lt;p&gt;array                       #=&amp;gt; [{key: :value}, {key: :value}, {key: :value}]
+```&lt;/p&gt;
 
 &lt;h3 id="arrays-of-strings"&gt;Arrays of strings&lt;/h3&gt;
 
@@ -75,8 +80,9 @@ array                       #=&amp;gt; [{key: :value}, {key: :value}, {key: :val
 
 &lt;h2 id="conclusion"&gt;Conclusion&lt;/h2&gt;
 
-&lt;p&gt;That's it for the most basic uses of an array storing values.
-Stay tuned for advanced usage of Arrays (mostly using the mixin Enumerable).&lt;/p&gt;
+&lt;p&gt;That's it for the most basic uses of an array storing values.&lt;/p&gt;
+
+&lt;p&gt;Stay tuned for advanced usage of Arrays (mostly using the mixin Enumerable).&lt;/p&gt;
 </content>
   </entry>
 </feed>

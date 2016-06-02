@@ -42,24 +42,29 @@
         
         <h3 id="the-object-oriented-way--arraynew">The object oriented way : Array.new</h3>
         
-        <p><code>ruby
-        Array.new       #=&gt; []
-        Array.new(2)    #=&gt; [nil, nil]
-        Array.new(2, 4) #=&gt; [4, 4]
-        </code></p>
+        <p>```ruby
+        Array.new       #=&gt; []</p>
+        
+        <p>Array.new(2)    #=&gt; [nil, nil]</p>
+        
+        <p>Array.new(2, 4) #=&gt; [4, 4]
+        ```</p>
         
         <p>Be aware that mutable objects (like hashes, strings, arrays…) should be instantiated with a block like this :</p>
         
-        <p>Array.new(3) { Hash.new }</p>
+        <p><code>Array.new(3) { Hash.new }</code></p>
         
         <p>See this pitfall in action :</p>
         
-        <p><code>ruby
-        hash = Hash.new
-        array = Array.new(3, hash)  #=&gt; [{}, {}, {}]
-        array[0][:key] = [:value]
-        array                       #=&gt; [{key: :value}, {key: :value}, {key: :value}]
-        </code></p>
+        <p>```ruby
+        hash = Hash.new</p>
+        
+        <p>array = Array.new(3, hash)  #=&gt; [{}, {}, {}]</p>
+        
+        <p>array[0][:key] = [:value]</p>
+        
+        <p>array                       #=&gt; [{key: :value}, {key: :value}, {key: :value}]
+        ```</p>
         
         <h3 id="arrays-of-strings">Arrays of strings</h3>
         
@@ -85,8 +90,9 @@
         
         <h2 id="conclusion">Conclusion</h2>
         
-        <p>That's it for the most basic uses of an array storing values.
-        Stay tuned for advanced usage of Arrays (mostly using the mixin Enumerable).</p>
+        <p>That's it for the most basic uses of an array storing values.</p>
+        
+        <p>Stay tuned for advanced usage of Arrays (mostly using the mixin Enumerable).</p>
       </div>
     </header>
     <aside>
