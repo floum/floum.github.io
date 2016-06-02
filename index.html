@@ -28,59 +28,57 @@
           use article.summary(250) if you have Nokogiri available to show just
           the first 250 characters
         -->
-        <h1 id="ruby-arrays">Ruby Arrays</h1>
+        <h1>Ruby Arrays</h1>
         
         <p><a href="http://ruby-doc.org/core-2.2.0/Array.html">Arrays</a> are ordered, integer-indexed collections of any object.</p>
         
-        <h2 id="defining-arrays">Defining arrays</h2>
+        <h2>Defining arrays</h2>
         
         <p>Arrays of strings can be defined in many ways :</p>
         
-        <h3 id="the-classic-waytrade-aka-the-literal-constructor">The classic way™ (aka the literal constructor)</h3>
+        <h3>The classic way&trade; (aka the literal constructor)</h3>
         
         <p><code>[1, 2, 3]</code></p>
         
-        <h3 id="the-object-oriented-way--arraynew">The object oriented way : Array.new</h3>
+        <h3>The object oriented way : Array.new</h3>
         
-        <p>```ruby
-        Array.new       #=&gt; []</p>
+        <pre><code class="ruby">Array.new       #=&gt; []
         
-        <p>Array.new(2)    #=&gt; [nil, nil]</p>
+        Array.new(2)    #=&gt; [nil, nil]
         
-        <p>Array.new(2, 4) #=&gt; [4, 4]
-        ```</p>
+        Array.new(2, 4) #=&gt; [4, 4]
+        </code></pre>
         
-        <p>Be aware that mutable objects (like hashes, strings, arrays…) should be instantiated with a block like this :</p>
+        <p>Be aware that mutable objects (like hashes, strings, arrays&hellip;) should be instantiated with a block like this :</p>
         
         <p><code>Array.new(3) { Hash.new }</code></p>
         
         <p>See this pitfall in action :</p>
         
-        <p>```ruby
-        hash = Hash.new</p>
+        <pre><code class="ruby">hash = Hash.new
         
-        <p>array = Array.new(3, hash)  #=&gt; [{}, {}, {}]</p>
+        array = Array.new(3, hash)  #=&gt; [{}, {}, {}]
         
-        <p>array[0][:key] = [:value]</p>
+        array[0][:key] = [:value]
         
-        <p>array                       #=&gt; [{key: :value}, {key: :value}, {key: :value}]
-        ```</p>
+        array                       #=&gt; [{key: :value}, {key: :value}, {key: :value}]
+        </code></pre>
         
-        <h3 id="arrays-of-strings">Arrays of strings</h3>
+        <h3>Arrays of strings</h3>
         
         <p>This seems to me like the coolest : <code>%w(ruby arrays are fun)</code></p>
         
-        <h2 id="using-arrays">Using Arrays</h2>
+        <h2>Using Arrays</h2>
         
-        <p>Now that we have know more about creating arrays, let's have some useful interactions with them :</p>
+        <p>Now that we have know more about creating arrays, let&rsquo;s have some useful interactions with them :</p>
         
-        <h3 id="adding-values"> Adding values</h3>
+        <h3> Adding values</h3>
         
         <p>At the end :    <code>[1, 2, 3].push(4)     #=&gt; [1, 2, 3, 4]</code></p>
         
         <p>At the start :  <code>[1, 2, 3].unshift(0)  #=&gt; [0, 1, 2, 3]</code></p>
         
-        <h3 id="removing-values">Removing values</h3>
+        <h3>Removing values</h3>
         
         <p>From the end :    <code>[1, 2, 3].pop    #=&gt; [1, 2]</code></p>
         
@@ -88,9 +86,9 @@
         
         <p>Note that both <code>Array#pop</code> and <code>Array#shift</code> change the array on which they are called while returning the element that was removed.</p>
         
-        <h2 id="conclusion">Conclusion</h2>
+        <h2>Conclusion</h2>
         
-        <p>That's it for the most basic uses of an array storing values.</p>
+        <p>That&rsquo;s it for the most basic uses of an array storing values.</p>
         
         <p>Stay tuned for advanced usage of Arrays (mostly using the mixin Enumerable).</p>
       </div>
