@@ -5,7 +5,78 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
+  <updated>2016-06-02T22:56:00+00:00</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>ruby-arrays</title>
+    <link rel="alternate" href="http://blog.url.com/2016/06/02/ruby-arrays.html"/>
+    <id>http://blog.url.com/2016/06/02/ruby-arrays.html</id>
+    <published>2016-06-02T22:56:00+00:00</published>
+    <updated>2016-06-02T23:21:51+00:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;h1 id="ruby-arrays"&gt;Ruby Arrays&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href="http://ruby-doc.org/core-2.2.0/Array.html"&gt;Arrays&lt;/a&gt; are ordered, integer-indexed collections of any object.&lt;/p&gt;
+
+&lt;h2 id="defining-arrays"&gt;Defining arrays&lt;/h2&gt;
+
+&lt;p&gt;Arrays of strings can be defined in many ways :&lt;/p&gt;
+
+&lt;h3 id="the-classic-waytrade-aka-the-literal-constructor"&gt;The classic way™ (aka the literal constructor)&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;[1, 2, 3]&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id="the-object-oriented-way--arraynew"&gt;The object oriented way : Array.new&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;ruby
+Array.new       #=&amp;gt; []
+Array.new(2)    #=&amp;gt; [nil, nil]
+Array.new(2, 4) #=&amp;gt; [4, 4]
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Be aware that mutable objects (like hashes, strings, arrays…) should be instantiated with a block like this :&lt;/p&gt;
+
+&lt;p&gt;Array.new(3) { Hash.new }&lt;/p&gt;
+
+&lt;p&gt;See this pitfall in action :&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;ruby
+hash = Hash.new
+array = Array.new(3, hash)  #=&amp;gt; [{}, {}, {}]
+array[0][:key] = [:value]
+array                       #=&amp;gt; [{key: :value}, {key: :value}, {key: :value}]
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id="arrays-of-strings"&gt;Arrays of strings&lt;/h3&gt;
+
+&lt;p&gt;This seems to me like the coolest : &lt;code&gt;%w(ruby arrays are fun)&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id="using-arrays"&gt;Using Arrays&lt;/h2&gt;
+
+&lt;p&gt;Now that we have know more about creating arrays, let's have some useful interactions with them :&lt;/p&gt;
+
+&lt;h3 id="adding-values"&gt; Adding values&lt;/h3&gt;
+
+&lt;p&gt;At the end :    &lt;code&gt;[1, 2, 3].push(4)     #=&amp;gt; [1, 2, 3, 4]&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;At the start :  &lt;code&gt;[1, 2, 3].unshift(0)  #=&amp;gt; [0, 1, 2, 3]&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id="removing-values"&gt;Removing values&lt;/h3&gt;
+
+&lt;p&gt;From the end :    &lt;code&gt;[1, 2, 3].pop    #=&amp;gt; [1, 2]&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;From the start :  &lt;code&gt;[1, 2, 3].shift  #=&amp;gt; [2, 3]&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Note that both &lt;code&gt;Array#pop&lt;/code&gt; and &lt;code&gt;Array#shift&lt;/code&gt; change the array on which they are called while returning the element that was removed.&lt;/p&gt;
+
+&lt;h2 id="conclusion"&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;That's it for the most basic uses of an array storing values.
+Stay tuned for advanced usage of Arrays (mostly using the mixin Enumerable).&lt;/p&gt;
+</content>
+  </entry>
 </feed>
