@@ -1,0 +1,25 @@
+$brand-color: #93bd20;
+$darkgrey: #252525;
+$white: #DADADA;
+
+body {
+  background-color: $darkgrey;
+  color: $white;
+}
+
+a {
+  color: $brand-color;
+  &:visited {
+    color: darken($brand-color, 20%);
+  }
+}
+
+h1 {
+  border-bottom: 1px solid $white;
+  padding: 10px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Lucida Console", Monaco, monospace;
+  color: $brand-color;
+}
