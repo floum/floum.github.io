@@ -9,6 +9,7 @@
       Flame Fusion
     </title>
     <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feed.xml" />
+    <link href='/github.css' rel='stylesheet'>
     <!-- BootstrapCDN -->
     <link crossorigin='anonymous' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' integrity='sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7' rel='stylesheet'>
     <script crossorigin='anonymous' integrity='sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS' src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
@@ -20,77 +21,7 @@
         <small>Ruby, Chess &amp; Game Design</small>
       </h1>
       <div id='main' role='main'>
-        <h2>
-          <a href="/2016/06/02/ruby-arrays.html">ruby-arrays</a>
-          <span>Jun  2</span>
-        </h2>
-        <!--
-          use article.summary(250) if you have Nokogiri available to show just
-          the first 250 characters
-        -->
-        <h1>Ruby Arrays</h1>
-        
-        <p><a href="http://ruby-doc.org/core-2.2.0/Array.html">Arrays</a> are ordered, integer-indexed collections of any object.</p>
-        
-        <h2>Defining arrays</h2>
-        
-        <p>Arrays of strings can be defined in many ways :</p>
-        
-        <h3>The classic way&trade; (aka the literal constructor)</h3>
-        
-        <p><code>[1, 2, 3]</code></p>
-        
-        <h3>The object oriented way : Array.new</h3>
-        
-        <pre><code class="ruby">Array.new       #=&gt; []
-        
-        Array.new(2)    #=&gt; [nil, nil]
-        
-        Array.new(2, 4) #=&gt; [4, 4]
-        </code></pre>
-        
-        <p>Be aware that mutable objects (like hashes, strings, arrays&hellip;) should be instantiated with a block like this :</p>
-        
-        <p><code>Array.new(3) { Hash.new }</code></p>
-        
-        <p>See this pitfall in action :</p>
-        
-        <pre><code class="ruby">hash = Hash.new
-        
-        array = Array.new(3, hash)  #=&gt; [{}, {}, {}]
-        
-        array[0][:key] = [:value]
-        
-        array                       #=&gt; [{key: :value}, {key: :value}, {key: :value}]
-        </code></pre>
-        
-        <h3>Arrays of strings</h3>
-        
-        <p>This seems to me like the coolest : <code>%w(ruby arrays are fun)</code></p>
-        
-        <h2>Using Arrays</h2>
-        
-        <p>Now that we have know more about creating arrays, let&rsquo;s have some useful interactions with them :</p>
-        
-        <h3> Adding values</h3>
-        
-        <p>At the end :    <code>[1, 2, 3].push(4)     #=&gt; [1, 2, 3, 4]</code></p>
-        
-        <p>At the start :  <code>[1, 2, 3].unshift(0)  #=&gt; [0, 1, 2, 3]</code></p>
-        
-        <h3>Removing values</h3>
-        
-        <p>From the end :    <code>[1, 2, 3].pop    #=&gt; [1, 2]</code></p>
-        
-        <p>From the start :  <code>[1, 2, 3].shift  #=&gt; [2, 3]</code></p>
-        
-        <p>Note that both <code>Array#pop</code> and <code>Array#shift</code> change the array on which they are called while returning the element that was removed.</p>
-        
-        <h2>Conclusion</h2>
-        
-        <p>That&rsquo;s it for the most basic uses of an array storing values.</p>
-        
-        <p>Stay tuned for advanced usage of Arrays (mostly using the mixin Enumerable).</p>
+        <h2>&#x000A;  <a href="/2016/06/02/ruby-arrays.html">ruby-arrays</a>&#x000A;  <span>Jun  2</span>&#x000A;</h2>&#x000A;<!--&#x000A;  use article.summary(250) if you have Nokogiri available to show just&#x000A;  the first 250 characters&#x000A;-->&#x000A;<h1 id="ruby-arrays">Ruby Arrays</h1>&#x000A;&#x000A;<p><a href="http://ruby-doc.org/core-2.2.0/Array.html">Arrays</a> are ordered, integer-indexed collections of any object.</p>&#x000A;&#x000A;<h2 id="defining-arrays">Defining arrays</h2>&#x000A;&#x000A;<p>Arrays of strings can be defined in many ways :</p>&#x000A;&#x000A;<h3 id="the-classic-waytrade-aka-the-literal-constructor">The classic way™ (aka the literal constructor)</h3>&#x000A;&#x000A;<pre class="highlight ruby"><code><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>&#x000A;</code></pre>&#x000A;&#x000A;<h3 id="the-object-oriented-way--arraynew">The object oriented way : Array.new</h3>&#x000A;&#x000A;<pre class="highlight ruby"><code><span class="no">Array</span><span class="p">.</span><span class="nf">new</span>       <span class="c1">#=&gt; []</span>&#x000A;<span class="no">Array</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>    <span class="c1">#=&gt; [nil, nil]</span>&#x000A;<span class="no">Array</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> <span class="c1">#=&gt; [4, 4]</span>&#x000A;</code></pre>&#x000A;&#x000A;<p>Be aware that mutable objects (like hashes, strings, arrays…) should be instantiated with a block like this :</p>&#x000A;&#x000A;<pre class="highlight ruby"><code><span class="no">Array</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="p">{</span> <span class="no">Hash</span><span class="p">.</span><span class="nf">new</span> <span class="p">}</span>&#x000A;</code></pre>&#x000A;&#x000A;<p>See this pitfall in action :</p>&#x000A;&#x000A;<pre class="highlight ruby"><code><span class="nb">hash</span> <span class="o">=</span> <span class="no">Hash</span><span class="p">.</span><span class="nf">new</span>&#x000A;<span class="n">array</span> <span class="o">=</span> <span class="no">Array</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="nb">hash</span><span class="p">)</span>  <span class="c1">#=&gt; [{}, {}, {}]</span>&#x000A;<span class="n">array</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="ss">:key</span><span class="p">]</span> <span class="o">=</span> <span class="ss">:value</span>&#x000A;<span class="n">array</span>                       <span class="c1">#=&gt; [{key: :value}, {key: :value}, {key: :value}]</span>&#x000A;</code></pre>&#x000A;&#x000A;<h3 id="string-literals">String Literals</h3>&#x000A;&#x000A;<p>They allow you to create arrays of strings or symbols in the coolest way :</p>&#x000A;&#x000A;<pre class="highlight ruby"><code><span class="sx">%w(array of strings)</span>  <span class="c1">#=&gt; ['array', 'of', 'strings']</span>&#x000A;<span class="sx">%i(array of symbols)</span>  <span class="c1">#=&gt; [:array, :of, :symbols]</span>&#x000A;</code></pre>&#x000A;&#x000A;<h2 id="using-arrays">Using Arrays</h2>&#x000A;&#x000A;<h3 id="adding-values">Adding values</h3>&#x000A;&#x000A;<p>At the end :</p>&#x000A;&#x000A;<pre class="highlight ruby"><code><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">].</span><span class="nf">push</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>     <span class="c1">#=&gt; [1, 2, 3, 4]</span>&#x000A;</code></pre>&#x000A;&#x000A;<p>At the start :</p>&#x000A;&#x000A;<pre class="highlight ruby"><code><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">].</span><span class="nf">unshift</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1">#=&gt; [0, 1, 2, 3]</span>&#x000A;</code></pre>&#x000A;&#x000A;<h3 id="removing-values">Removing values</h3>&#x000A;&#x000A;<p>From the end :</p>&#x000A;&#x000A;<pre class="highlight ruby"><code><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">].</span><span class="nf">pop</span>    <span class="c1">#=&gt; [1, 2]`</span>&#x000A;</code></pre>&#x000A;&#x000A;<p>From the start :</p>&#x000A;&#x000A;<pre class="highlight ruby"><code><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">].</span><span class="nf">shift</span>  <span class="c1">#=&gt; [2, 3]`</span>&#x000A;</code></pre>&#x000A;&#x000A;<p>Note that both <code>Array#pop</code> and <code>Array#shift</code> change the array on which they are called while returning the element that was removed.</p>&#x000A;&#x000A;<h2 id="conclusion">Conclusion</h2>&#x000A;&#x000A;<p>That's it for the most basic uses of an array storing values.</p>&#x000A;&#x000A;<p>Stay tuned for advanced usage of Arrays (mostly using the mixin Enumerable).</p>
       </div>
     </header>
     <aside>
