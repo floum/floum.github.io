@@ -1,7 +1,7 @@
 ---
 title: ruby-arrays
 date: 2016-06-02 22:56 UTC
-tags: ruby, arrays, basics
+tags: ruby, Array, basics
 ---
 
 #Ruby Arrays
@@ -12,7 +12,7 @@ tags: ruby, arrays, basics
 
 Arrays of strings can be defined in many ways :
 
-###The classic way&trade; (aka the literal constructor) 
+###The classic way&trade; (aka the literal constructor)
 
 ~~~
 [1, 2, 3]
