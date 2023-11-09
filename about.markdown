@@ -4,4 +4,4 @@ title: About
 permalink: /about/
 ---
 
-email: efflamm.castel@gmail.com
+I'm currently working at [Orange SA](https://orange.com) as a Senior Software Engineer.
